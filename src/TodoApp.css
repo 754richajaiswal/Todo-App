@@ -1,0 +1,320 @@
+/* Overall container */
+/* Overall container */
+.app-container {
+  max-width: 700px;   /* instead of fixed 600px */
+  width: 95%;         /* take almost full width on mobile */
+  margin: 30px auto;
+  background: #1e1e2f;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+
+/* Title */
+h1 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Input section */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  background: #2a2a40;
+  color: #f1f1f1;
+}
+
+.input-section input:focus {
+  border-color: #4cafef;
+}
+
+/* Add button */
+.input-section button {
+  background: linear-gradient(135deg, #4cafef, #2196f3);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.input-section button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2196f3, #0d6efd);
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4cafef #2a2a40;
+}
+
+.task-list li {
+  background: #2a2a40;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.task-list li:hover {
+  background: #35354d;
+}
+
+.task-list li input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 6px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+
+/* Completed tasks */
+.completed span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* Task text */
+.task-list li span {
+  flex: 0.5;
+  font-size: 18px;
+  font-style: oblique;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.actions button svg {
+  font-size: 16px;
+}
+
+/* Different button styles */
+.actions button:nth-child(1) {
+  background: #ffb74d;
+  color: #fff;
+}
+.actions button:nth-child(1):hover {
+  background: #ffa726;
+}
+
+.actions button:nth-child(2) {
+  background: #4caf50;
+  color: white;
+}
+.actions button:nth-child(2):hover {
+  background: #388e3c;
+}
+
+.actions button:nth-child(3) {
+  background: #f44336;
+  color: white;
+}
+.actions button:nth-child(3):hover {
+  background: #d32f2f;
+}
+
+/* Clear All Button */
+.clear-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.clear-btn:hover {
+  background: #c2185b;
+}
+
+/* Empty Message */
+.empty-msg {
+  color: #bbb;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+
+  .app-container {
+    width: 65%;
+  }
+  h1 {
+    font-size: 25px;
+  }
+
+  .input-section {
+    /* flex-direction: column; */
+    gap: 8px;
+  }
+
+  .input-section input {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .input-section button {
+    font-size: 18px;
+    padding: 5px;
+    width: 12%;
+  }
+
+  .task-list li {
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+  }
+
+  .task-list li input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 6px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  width: 120px;
+}
+
+  .task-list li span {
+    margin-bottom: 6px;
+    font-size: 16px;
+    /* flex: unset; */
+  }
+
+  .actions {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .actions button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .actions button svg {
+  font-size: 12px;
+}
+
+  .clear-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+
+/* toggle sun Moon */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.theme-toggle button {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #f1f1f1;
+  transition: transform 0.2s;
+}
+
+.theme-toggle button:hover {
+  transform: rotate(20deg);
+}
+
+/* light Mode */
+/* Light Mode Styles */
+.light-mode {
+  background: #f9f9f9;
+  color: #1e1e2f;
+}
+
+/* inside light mode, override elements */
+.light-mode h1 {
+  color: #1e1e2f;
+}
+
+.light-mode .input-section input {
+  background: #fff;
+  color: #000;
+  border: 2px solid #ccc;
+}
+
+.light-mode .input-section input:focus {
+  border-color: #4cafef;
+}
+
+.light-mode .input-section button {
+  background: linear-gradient(135deg, #2196f3, #0d6efd);
+}
+
+.light-mode .task-list li {
+  background: #ffffff;
+  color: #1e1e2f;
+}
+
+.light-mode .task-list li:hover {
+  background: #f1f1f1;
+}
+
+.light-mode .completed span {
+  color: #888;
+}
+
+.light-mode .clear-btn {
+  background: #d32f2f;
+}
+
+.light-mode .theme-toggle button {
+  color: #1e1e2f;
+}
+
+
+
