@@ -1,37 +1,56 @@
-/* Overall container */
-/* Overall container */
-.app-container {
-  max-width: 700px;   /* instead of fixed 600px */
-  width: 95%;         /* take almost full width on mobile */
-  margin: 30px auto;
-  background: #1e1e2f;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #f1f1f1;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* Title */
-h1 {
-  color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+/* ===== App Container ===== */
+.app-container {
+  width: 100%;
+  max-width: 400px;
+  height: 100vh; /* full height on mobile */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+/* ===== Header ===== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.app-header h1 {
+  font-size: 1.6rem;
 }
 
 /* Input section */
 .input-section {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .input-section input {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: 2px solid #333;
   border-radius: 10px;
   outline: none;
@@ -48,10 +67,10 @@ h1 {
 .input-section button {
   background: linear-gradient(135deg, #4cafef, #2196f3);
   border: none;
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: 10px 14px;
+  border-radius: 7px;
   color: white;
-  font-size: 20px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.2s, background 0.3s;
 }
@@ -63,6 +82,7 @@ h1 {
 
 /* Task List */
 .task-list {
+  flex: 1;
   list-style: none;
   padding: 0;
   max-height: 300px;
@@ -184,17 +204,11 @@ h1 {
 @media (max-width: 768px) {
 
   .app-container {
-    width: 90%;
-    min-height: 90vh;
-    margin: 0;
-    border-radius: 0;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+   border-radius: 0;
+   max-width: 100%;
   }
   h1 {
-    font-size: 25px;
+    font-size: 1.3rem;
   }
 
   .input-section {
