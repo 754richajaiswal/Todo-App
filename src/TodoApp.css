@@ -184,7 +184,14 @@ h1 {
 @media (max-width: 768px) {
 
   .app-container {
-    width: 65%;
+    width: 90%;
+    min-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   h1 {
     font-size: 25px;
